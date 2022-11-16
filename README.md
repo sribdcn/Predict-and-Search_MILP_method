@@ -61,7 +61,7 @@ The corresponding bipartite graph(BG) and solution will be automatically generat
 Select the parameter TaskName in trainPredictModel.py, and then
 
 ```
-run trainPredictModel.py
+python trainPredictModel.py
 ```
 
 #### Test
@@ -69,11 +69,11 @@ run trainPredictModel.py
 Put the trained model into the models folder, then
 
 ```
-run PredictAndSearch_SCIP.py
+python PredictAndSearch_SCIP.py
 
-run PredictAndSearch_GRB.py
+python PredictAndSearch_GRB.py
 
-run FixingStrategy_SCIP.py
+python FixingStrategy_SCIP.py
 ```
 
 all solver logs will be saved in logs folder.
