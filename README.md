@@ -1,5 +1,6 @@
-# **Predict and search framework for ICLR2022 paper #4228**
 
+# **Predict and search framework**
+Repository for A GNN-Guided Predict-and-Search Framework for Mixed-Integer Linear Programming (ICLR 2023 Conference Paper4228).
 
 ## Requirements
 
