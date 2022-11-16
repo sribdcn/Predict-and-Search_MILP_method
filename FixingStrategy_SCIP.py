@@ -64,6 +64,8 @@ for ins_num in range(TestNum):
     constraint_features = c_nodes.cpu()
     constraint_features[np.isnan(constraint_features)] = 1 #remove nan value
     variable_features = v_nodes
+        if TaskName == "IP":
+        variable_features = postion_get(variable_features)
     edge_indices = A._indices()
     edge_features = A._values().unsqueeze(1)
     edge_features=torch.ones(edge_features.shape)
