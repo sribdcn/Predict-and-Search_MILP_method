@@ -1,4 +1,4 @@
-####Requirements
+##Requirements
 
 Linux
 
@@ -14,7 +14,7 @@ Linux
 
 –pyg 2.0.4
 
-#### Installation
+## Installation
 
 Create a new environment with [Conda](https://docs.conda.io/en/latest/)
 
