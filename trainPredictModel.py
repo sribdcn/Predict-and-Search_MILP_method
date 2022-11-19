@@ -153,7 +153,7 @@ optimizer = torch.optim.Adam(PredictModel.parameters(), lr=LEARNING_RATE)
 
 
 
-weight_norm=EnergyWeightNorm(task)
+weight_norm=EnergyWeightNorm(TaskName)
 best_val_loss = 99999
 for epoch in range(NB_EPOCHS):
 
