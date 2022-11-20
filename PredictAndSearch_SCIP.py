@@ -17,7 +17,7 @@ TestNum=100
 def test_hyperparam(task):
     '''
     set the hyperparams
-    k_0, k_1,eps
+    k_0, k_1,delta
     '''
     if task=="IP":
         return 400,5,1
@@ -27,7 +27,7 @@ def test_hyperparam(task):
         return 0,600,5
     elif task == "CA":
         return 400,0,10
-k_0,k_1,eps=test_hyperparam(TaskName)
+k_0,k_1,delta=test_hyperparam(TaskName)
 
 #set log folder
 solver='SCIP'
@@ -114,7 +114,7 @@ for ins_num in range(TestNum):
 
     print(f'instance: {test_ins_name}, '
           f'fix {k_0} 0s and '
-          f'fix {k_1} 1s, eps {eps}. ')
+          f'fix {k_1} 1s, delta {delta}. ')
 
     #read instance
     m1 = scp.Model()
@@ -142,7 +142,7 @@ for ins_num in range(TestNum):
         alphas.append(tmp_var)
         m1.addCons(tmp_var >= tar_var - x_star, f'alpha_up_{i}')
         m1.addCons(tmp_var >= x_star - tar_var, f'alpha_down_{i}')
-    m1.addCons(scp.quicksum(ap for ap in alphas) <= eps, 'sum_alpha')
+    m1.addCons(scp.quicksum(ap for ap in alphas) <= delta, 'sum_alpha')
     m1.optimize()
 
 
