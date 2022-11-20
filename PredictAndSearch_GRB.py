@@ -18,7 +18,7 @@ TestNum=100
 def test_hyperparam(task):
     '''
     set the hyperparams
-    k_0, k_1, weight_norm
+    k_0, k_1, delta
     '''
     if task=="IP":
         return 400,5,1
@@ -28,7 +28,7 @@ def test_hyperparam(task):
         return 0,600,5
     elif task == "CA":
         return 400,0,10
-k_0,k_1,eps=test_hyperparam(TaskName)
+k_0,k_1,delta=test_hyperparam(TaskName)
 
 #set log folder
 solver='GRB'
@@ -115,7 +115,7 @@ for ins_num in range(TestNum):
 
     print(f'instance: {test_ins_name}, '
           f'fix {k_0} 0s and '
-          f'fix {k_1} 1s, eps {eps}. ')
+          f'fix {k_1} 1s, delta {delta}. ')
 
 
     #read instance
@@ -146,7 +146,7 @@ for ins_num in range(TestNum):
     all_tmp = 0
     for tmp in alphas:
         all_tmp += tmp
-    m.addConstr(all_tmp <= eps, name="sum_alpha")
+    m.addConstr(all_tmp <= delta, name="sum_alpha")
     m.optimize()
 
 
