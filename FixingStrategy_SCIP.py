@@ -17,7 +17,7 @@ TestNum=100
 def test_hyperparam(task):
     '''
     set the hyperparams
-    k_0, k_1, weight_norm
+    k_0, k_1, delta
     '''
     if task=="IP":
         return 400,5,1
